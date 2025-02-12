@@ -1,0 +1,34 @@
+version: 2 
+
+sources:
+  - name: raw
+    schema: gz_raw_data
+    description: original dataset in the raw format
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: table contains all sales information
+        columns:
+          - name: pdt.id
+            description: id of the sales table should be unique and not - not_null
+            tests:
+              - unique
+              - not_null
+      - name: product
+        identifier: raw_gz_product
+        description: table contains all product information
+        columns:
+          - name: products_id
+            description: id of the sales table should be unique and not - not_null
+            tests:
+              - unique
+              - not_null              
+      - name: ship
+        identifier: raw_gz_ship
+        description: table contains all order information
+        columns:
+          - name: orders_id
+            description: id of the sales table should be unique and not - not_null
+            tests:
+              - unique
+              - not_null
